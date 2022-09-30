@@ -17,6 +17,7 @@
     </div>
     <hr>
     <input type="submit" id="signinBtn" value="Sign In" class="btn btn-primary">
+    <p>Don't have an account? <a href="<?= base_url() ?>/signup" class="link-light">Sign Up.</a></p>
     <?= form_close() ?>
 </main>
 <?= $this->endSection() ?>

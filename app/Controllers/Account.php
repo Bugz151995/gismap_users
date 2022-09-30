@@ -33,14 +33,14 @@ class Account extends BaseController
         $account = model(AccountModel::class);
         $user = model(UserModel::class);
 
-        if (!$this->validate($validation->getRuleGroup('new_account')))
+        if (!$this->validate($validation->getRuleGroup('signup')))
             return view('signup', ['validation' => $this->validator]);
 
         $user->save([
             'fname' => $this->request->getPost('fname'),
             'mname' => $this->request->getPost('mname'),
             'lname' => $this->request->getPost('lname'),
-            'contact_number' => $this->request->getPost('contact_number'),
+            'contact_number' => $this->request->getPost('cnum'),
         ]);
 
         $account->save([
@@ -50,6 +50,6 @@ class Account extends BaseController
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ]);
 
-        return redirect()->to('/signup');
+        return redirect()->to('/success');
     }
 }

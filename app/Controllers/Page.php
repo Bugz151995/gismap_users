@@ -31,22 +31,12 @@ class Page extends BaseController
                 return view($page_name, array_merge($page_data, $uri_data));
                 break;
 
-            case 'users':
-                if ($slug !== false)
-                    return view($page_name, array_merge($page_data, $uri_data, $user_data, ['sel_data' => $acct->getUsers($slug)]));
-
-                return view($page_name, array_merge($page_data, $uri_data, $user_data));
+            case 'signup':
+                return view($page_name);
                 break;
 
-            case 'map':
-                return view($page_name, array_merge($page_data, $uri_data));
-                break;
-
-            case 'marine_resources':
-                if ($slug !== false)
-                    return view($page_name, array_merge($page_data, $uri_data, $fish_data, ['sel_data' => $fish->getMarines($slug)]));
-
-                return view($page_name, array_merge($page_data, $uri_data, $fish_data));
+            case 'success':
+                return view($page_name);
                 break;
 
             default:

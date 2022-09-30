@@ -59,21 +59,51 @@ class Validation extends BaseConfig
         ]
     ];
 
-    public $new_account = [
-        'fname' => 'required',
-        'mname' => 'required',
-        'lname' => 'required',
-        'contact_number' => 'required',
-        'username' => 'required|is_unique[account_tbl.username]',
-        'password' => 'required|matches[conf_password]',
-        'conf_password' => 'required|matches[password]',
-    ];
-
-    public $edit_account = [
-        'fname' => 'required',
-        'mname' => 'required',
-        'lname' => 'required',
-        'contact_number' => 'required',
-        'username' => 'required'
+    public $signup = [
+        'fname' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'The First Name field is required.'
+            ]
+        ],
+        'mname' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'The Middle Name field is required.'
+            ]
+        ],
+        'lname' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'The Last Name field is required.'
+            ]
+        ],
+        'cnum' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'The Contact Number field is required.'
+            ]
+        ],
+        'username' => [
+            'rules' => 'required|is_unique[account_tbl.username]',
+            'errors' => [
+                'required' => 'The Username field is required.',
+                'is_unique' => 'The Username is already taken.'
+            ]
+        ],
+        'password' => [
+            'rules' => 'required|matches[confpassword]',
+            'errors' => [
+                'required' => 'The Password field is required.',
+                'matches' => 'The Password does not match.'
+            ]
+        ],
+        'confpassword' => [
+            'rules' => 'required|matches[password]',
+            'errors' => [
+                'required' => 'The Confirm Password field is required.',
+                'matches' => 'The Password does not match.'
+            ]
+        ]
     ];
 }
