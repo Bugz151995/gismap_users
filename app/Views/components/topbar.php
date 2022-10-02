@@ -10,16 +10,22 @@
 			<div class="navbar-collapse collapse" id="navbarCollapse" style="">
 				<ul class="navbar-nav me-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link active rounded" aria-current="page" href="#">Home</a>
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link rounded" href="#">Map</a>
+						<a class="nav-link" href="#">Features</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link rounded" href="#">About</a>
+						<a class="nav-link" href="#">Map</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Feedback</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
 					</li>
 				</ul>
-				<a href="<?= base_url() ?>/signout" class="btn btn-outline-warning" type="submit">Sign Out</a>
+				<a href="<?= base_url() ?>/signout" class="btn btn-outline-warning rounded-pill" type="submit">Sign Out</a>
 			</div>
 		</div>
 	</nav>
