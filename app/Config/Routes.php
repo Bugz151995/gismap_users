@@ -44,6 +44,7 @@ $routes->post('signin', 'Account::signin');
 $routes->post('signup', 'Account::create');
 $routes->get('signout', 'Account::signout');
 
+$routes->post('feedback', 'Feedback::create');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
